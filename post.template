@@ -1,0 +1,10 @@
+<html>
+  <head>
+    <title> {{.SafeTitle}} </title>
+  </head>
+  <body>
+    <h2>{{.Num}}. {{.Title}}</h2>
+    <img src="{{.ImgName}}" alt="{{.Alt}}">
+    <p>{{.Alt}}</p>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title> XKCD </title>
+  </head>
+  <body>
+    <h1>XKCD</h1>
+    <ul>
+      {{range .}}
+      <li>
+        {{.Num}}.<a href="{{.Num}}.html">{{.SafeTitle}}</a>
+      </li>
+      {{end}}
+    </ul>
+  </body>
+</html>
