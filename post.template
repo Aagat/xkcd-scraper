@@ -4,7 +4,7 @@
   </head>
   <body>
     <h2>{{.Num}}. {{.Title}}</h2>
-    <img src="{{.ImgName}}" alt="{{.Alt}}">
+    <a href={{.ImgName}}><img src="{{.ImgName}}" alt="{{.Alt}}"></a>
     <p>{{.Alt}}</p>
   </body>
 </html>
