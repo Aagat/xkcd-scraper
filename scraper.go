@@ -35,6 +35,12 @@ func main() {
 }
 
 func downloadComics() {
+
+	data, err := fetchMeta("https://xkcd.com/info.0.json")
+	if err != nil {
+		panic(err)
+	}
+
 	jobs := make(chan int, 2000)
 	results := make(chan int, 2000)
 
@@ -42,12 +48,12 @@ func downloadComics() {
 		go fetcher(w, jobs, results)
 	}
 
-	for j := 1; j <= 1851; j++ {
+	for j := 1; j <= data.Num; j++ {
 		jobs <- j
 	}
 	close(jobs)
 
-	for a := 1; a <= 1848; a++ {
+	for a := 1; a <= (data.Num - 3); a++ {
 		<-results
 	}
 }
