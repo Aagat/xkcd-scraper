@@ -68,7 +68,7 @@ func fetcher(id int, jobs <-chan int, results chan<- int) {
 	for j := range jobs {
 
 		if j == 404 || j == 1608 || j == 1663 {
-			// These don't actually exist.
+			// These don't actually exist in image format.
 			continue
 		}
 
